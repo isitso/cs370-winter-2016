@@ -8,9 +8,23 @@ Let us assume that you have an array size _N_ filled with random integers from 0
 * Devise a sequential algorithm that will search the array and count up the number of times _k_ appears.  
 * Devise a parallel algorithm that will search the array and count up the number of times _k_ appears if you have _M_ threads.
 
+## Example code
+
+### To compile
+
+```
+gcc -o program program.c 
+```
+
+To run on unix:
+
+```
+./program 1000 100 25 5
+```
+
 ## Deliverable
 
-Combine these two algorithms into a single C program can be executed as followed
+The example programs are provided to get you started.  You should combine all three programs: `dynamic-array.c` `program.c` and `thread-demo.c` into a single program `homework1.c` that is to be executed as followed:
 
 ```
 program <N> <z> <k> <M>
@@ -34,4 +48,16 @@ The homework grade will be graded as followed:
 
 * Completion: Everything works 8 pts
 * Discussion: I will ask you questions on your assignment 2 pt
+
+## Hints and Tips
+
+1. Start with a simple C program that can generate `N` random integers from 0 to `z`
+
+2. Modify the C program so that it searches the array sequentially and count the number of times the integer `k` appears
+
+3. Modify the C program so that you can partition the array into `M` partitions
+
+4. Figure out which thread is responsible for which partition, e.g. thread id, start, and end index (you can do this without coding)
+
+5. Write threaded routine to perform step 2 (from above)
 
